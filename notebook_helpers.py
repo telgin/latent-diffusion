@@ -117,7 +117,7 @@ def get_cond(mode, selected_path):
         c = rearrange(c, '1 c h w -> 1 h w c')
         c = 2. * c - 1.
 
-        c = c.to(torch.device("cuda"))
+        c = c.to(torch.device("cpu"))
         example["LR_image"] = c
         example["image"] = c_up
 
